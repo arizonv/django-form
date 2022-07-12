@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<body class="body">
+    <div class="container">
+        <h1 class="tienda-titulo">Contacto</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquam quod sit hic ducimus at
+            laboriosam
+            ex. Corporis cupiditate iusto nulla dignissimos fugiat. Voluptatum dicta accusamus labore ut asperiores
+            doloribus nostrum dignissimos temporibus, ullam doloremque iusto illo natus facere porro soluta possimus.
+            Nulla
+            mollitia, tenetur deleniti eius vel impedit sequi sint explicabo veniam ipsa cum quos inventore, at quis
+            harum.
+        </p>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="d-flex justify-content-center col-lg-12 col-md-12 col-sm-12 col-xs-10">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="titulo-form">gracias por tu donacion !</h1>
+                    <br>
+                    <form action="" method="post" class="formulario" id="formulario">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <hr>
+                        <div class="formulario__grupo">
+                            <label for="ddlRegion identificacion" class="formulario__label">Selecciona Region</label>
+                            <div class="formulario__grupo-input">
+                                <p id="region"></p>
+                            </div>
+                        </div>
+                        <!-- Grupo: Comuna -->
+                        <div class="formulario__grupo">
+                            <label for="ddlRegion " class="formulario__label">Selecciona Comuna</label>
+                            <div class="formulario__grupo-input">
+                                <p id="comuna"></p>
+                            </div>
+                        </div>         
+                        <br>
+                        <div class="botones d-flex justify-content-end">
+                            <button type="reset" class="btn btn-secondary"> cancelar </button>
+                            &nbsp;
+                            <button type="submit" class="btn btn-primary"> enviar </button>
+                        </div>
+                    </form>
+                    <hr>
+                </div>
+                <div class="container">
+                    <h3 class="titulo-form">visitanos.</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.053320590109!2d-70.6974927!3d-33.4218542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c417683cee11%3A0xdcea73c72213f71!2sAvenida%20Carrascal%20%26%20Entre%20R%C3%ADos%2C%20Quinta%20Normal%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1657487345782!5m2!1ses!2scl"
+                        width="600" height="450" style="border:3;" style="border:0;" allowfullscreen="-0.2s"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+{% endblock %}

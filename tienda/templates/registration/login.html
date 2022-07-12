@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<body class="body">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="titulo-form"> lOGIN</h1>
+                    <br>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+                        <br>
+                        <div class="botones d-flex justify-content-start">
+                            <a href="{% url 'home'%}">Home</a>
+                        </div>
+                        <div class="botones d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary"> enviar </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+{% endblock %}

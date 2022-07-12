@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<body class="body">
+
+    <div class="container">
+        <h1 class="tienda-titulo">login</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquam quod sit hic ducimus at laboriosam
+            ex. Corporis cupiditate iusto nulla dignissimos fugiat. Voluptatum dicta accusamus labore ut asperiores
+            doloribus nostrum dignissimos temporibus, ullam doloremque iusto illo natus facere porro soluta possimus. Nulla
+            mollitia, tenetur deleniti eius vel impedit sequi sint explicabo veniam ipsa cum quos inventore, at quis harum.
+        </p>
+
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="titulo-form"> Registro</h1>
+                    <br>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+                        <br>
+                        <div class="botones d-flex justify-content-start">
+                            <a href="{% url 'home'%}">Home</a>
+                            
+                        </div>
+                        <div class="botones d-flex justify-content-end">
+                            <input type="submit" value="registrar"  class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+{% endblock %}
